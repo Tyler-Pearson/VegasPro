@@ -1,13 +1,7 @@
-# RETURN FORMAT: (team 0, score 0, team 1, score 1)
-
 import re
 import urllib2
 from bs4 import BeautifulSoup
 import sys
-
-
-BASE_URL = "https://www.pro-football-reference.com/years/2019/"
-CUR_WEEK = 13
 
 
 
@@ -31,7 +25,9 @@ def get_week(url):
    return results
 
 
-def get_results(cur_week):
+# ADD OFFENSE
+# ADD DEFENSE
+def add_stats(stats):
 
    results = []
 
