@@ -63,7 +63,7 @@ def add_conversions(stats, soup):
         stats[name].append(rz_suc/rz_att)
 
 
-# ADD OFFENSE
+# ADD SIDE (offense or defense - same logic)
 def add_side(stats, url):
     tables = get_tables(url)
     add_general(stats, tables["team_stats"])
