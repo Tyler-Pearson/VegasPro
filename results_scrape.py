@@ -1,5 +1,6 @@
 # RETURN FORMAT: (team 0, score 0, team 1, score 1)
 
+import csv
 import re
 import urllib2
 from bs4 import BeautifulSoup
@@ -7,7 +8,7 @@ import sys
 
 
 BASE_URL = "https://www.pro-football-reference.com/years/2019/"
-CUR_WEEK = 13
+CUR_WEEK = 15
 
 
 
@@ -22,11 +23,11 @@ def get_week(url):
    for game in games:
       result = game.find('table', attrs={'class':'teams'})
       teams = result.find_all('tr')
-      results.append((
+      results.append([
          str(teams[1].find('a').text),
          int(teams[1].find('td', attrs={'class':'right'}).text),
          str(teams[2].find('a').text),
-         int(teams[2].find('td', attrs={'class':'right'}).text)))
+         int(teams[2].find('td', attrs={'class':'right'}).text)])
 
    return results
 
